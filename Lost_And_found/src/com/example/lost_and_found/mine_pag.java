@@ -1,37 +1,32 @@
 package com.example.lost_and_found;
 
+
+
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
-public class mine_pag extends Activity{
+public class mine_pag extends Fragment {
 
-	ListView lv;
+	ListView minelv;
 	String string;
-	String[] strs = new String[] {
-		    "¸öÈËĞÅÏ¢", "¶ªÊ§¼ÇÂ¼", "ÕÒ»Ø¼ÇÂ¼", "Ê°µ½¼ÇÂ¼", "¹é»¹¼ÇÂ¼","ÉèÖÃ"
-		    };//¶¨ÒåÒ»¸öStringÊı×éÓÃÀ´ÏÔÊ¾ListViewµÄÄÚÈİ
-	 protected void onCreate(Bundle savedInstanceState) {
-	        super.onCreate(savedInstanceState);
-	        setContentView(R.layout.mine);
-	        
-	        lv=(ListView) findViewById(R.id.main_listView);
-	        lv.setAdapter(new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, strs));
-	 lv.setOnItemClickListener(new OnItemClickListener() {
+	String[] strs = new String[] { "ä¸ªäººä¿¡æ¯", "ä¸¢å¤±è®°å½•", "æ‰¾å›è®°å½•", "æ‹¾åˆ°è®°å½•", "å½’è¿˜è®°å½•", "è®¾ç½®" };// å®šä¹‰ä¸€ä¸ªStringæ•°ç»„ç”¨æ¥æ˜¾ç¤ºListViewçš„å†…å®¹
 
-		@Override
-		public void onItemClick(AdapterView<?> parent, View view,
-				int position, long id) {
-			// TODO Auto-generated method stub
-			string=lv.getItemAtPosition(position).toString();
-			
-		}
-	});
-	 
-	 
-	 }
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+			Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		return inflater.inflate(R.layout.mine, container, false);
+	}
 }

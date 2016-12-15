@@ -13,5 +13,9 @@
     <string name="sigining">登录</string>
     <string name="input_identify_code">输入验证码</string>
     <string name="picture">头像</string>
+    <string name="nickname">昵称</string>
+    <string name="connection">联系方式</string>
+    <string name="address">地址</string>
+    <string name="sex">性别</string>
 
 </resources>

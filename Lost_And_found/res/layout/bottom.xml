@@ -7,101 +7,137 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="70dp"
-      
+        android:layout_height="55dp"
         android:background="#DCDCDC"
         android:orientation="horizontal" >
 
+        <!-- android:background="#DCDCDC" -->
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton
-                android:id="@+id/find_imbtn"
+            <LinearLayout
+                android:id="@+id/find_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#DCDCDC"
-                android:src="@drawable/findicon" />
+                android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/find_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/find"
-                android:textSize="20dp" />
+                <ImageButton
+                    android:id="@+id/find_imbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#DCDCDC"
+                    android:src="@drawable/find" />
+
+                <TextView
+                    android:id="@+id/find_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/find"
+                    android:textSize="15dp" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
+        
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton
-                android:id="@+id/lost_imbtn"
+            <LinearLayout
+                android:id="@+id/lost_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#DCDCDC"
-                android:src="@drawable/search" />
+                android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/lost_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/lost"
-                android:textSize="20dp" />
+                <ImageButton
+                    android:id="@+id/lost_imbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#DCDCDC"
+                    android:src="@drawable/lost" />
+
+                <TextView
+                    android:id="@+id/lost_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/lost"
+                    android:textSize="15dp" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
+         
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton
-                android:id="@+id/return_imbtn"
+            <LinearLayout
+                android:id="@+id/getback_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#DCDCDC"
-                android:src="@drawable/returnicon" />
+                android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/lost_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/foundback"
-                android:textSize="20dp" />
+                <ImageButton
+                    android:id="@+id/return_imbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#DCDCDC"
+                    android:src="@drawable/lost" />
+
+                <TextView
+                    android:id="@+id/lost_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/foundback"
+                    android:textSize="15dp" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
+            
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            android:gravity="center"
             android:orientation="vertical" >
 
-            <ImageButton
-                android:id="@+id/minr_imbtn"
+            <LinearLayout
+                android:id="@+id/mine_layout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="#DCDCDC"
-                android:src="@drawable/mine" />
+                android:orientation="vertical" >
 
-            <TextView
-                android:id="@+id/mine_text"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:text="@string/mine"
-                android:textSize="20dp" />
+                <ImageButton
+                    android:id="@+id/minr_imbtn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="#DCDCDC"
+                    android:src="@drawable/myself" />
+
+                <TextView
+                    android:id="@+id/mine_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="@string/mine"
+                    android:textSize="15dp" />
+            </LinearLayout>
         </LinearLayout>
     </LinearLayout>
 
