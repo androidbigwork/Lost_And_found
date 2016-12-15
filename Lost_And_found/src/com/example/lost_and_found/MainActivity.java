@@ -18,7 +18,7 @@ public class MainActivity extends Activity {
 			public void run() {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
-				intent.setClass(MainActivity.this, firstpage.class);
+				intent.setClass(MainActivity.this, LoginActivity.class);
 				startActivity(intent);
 				finish();
 			}
