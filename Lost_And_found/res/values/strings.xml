@@ -18,5 +18,13 @@
     <string name="address">地址</string>
     <string name="sex">性别</string>
     <string name="privateinformation">个人信息</string>
+      <string name="description">物品描述</string>
+    <string name="brief_state_lost_info">简要说明丢失的信息</string>
+    <string name="lost_time">丢失时间</string>
+    <string name="lost_address">丢失地点</string>
+    <string name="lost_name">姓名</string>
+    <string name="lost_phone">手机</string>
+    <string name="lost_qq">Q Q</string>
+    <string name="commit">提交</string>
 
 </resources>
