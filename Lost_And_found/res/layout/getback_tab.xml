@@ -4,10 +4,165 @@
     android:layout_height="match_parent"
     android:orientation="vertical" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView" />
+    
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="#dcdcdc"
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+       
+       
+        >
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:paddingLeft="10px"
+        android:background="#ffffff">
 
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时间：" />
+
+        <EditText
+            android:id="@+id/timeEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.68"
+            android:ems="10"
+            android:inputType="date" >
+
+            <requestFocus />
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingLeft="10px"
+        android:background="#ffffff" >
+
+        <TextView
+            android:id="@+id/addressTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="地点：" />
+
+        <EditText
+            android:id="@+id/addressEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPostalAddress" />
+    </LinearLayout>
+<LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="#ffffff"
+        android:paddingLeft="10px">
+
+        <TextView
+            android:id="@+id/describeTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="描述：" />
+
+        <EditText
+            android:id="@+id/describeEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="phone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingLeft="10px" >
+
+        <TextView
+            android:id="@+id/found_phoneTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号码：" />
+
+        <EditText
+            android:id="@+id/found_phoneEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="phone" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:paddingLeft="10px" >
+
+        <TextView
+            android:id="@+id/lost_nameTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="失主姓名：" />
+
+        <EditText
+            android:id="@+id/lost_nameEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" 
+        android:background="#ffffff"
+        android:paddingLeft="10px">
+
+        <TextView
+            android:id="@+id/lost_phoneTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="失主手机号码：" />
+
+        <EditText
+            android:id="@+id/lost_phoneEdt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:ems="10" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff" >
+
+        <Button
+            android:id="@+id/submitBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true"
+            android:text="提交" />
+
+    </RelativeLayout>
 </LinearLayout>
+</LinearLayout>
+    

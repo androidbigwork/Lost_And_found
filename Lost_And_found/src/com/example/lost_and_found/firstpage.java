@@ -3,6 +3,7 @@ package com.example.lost_and_found;
 import java.util.ArrayList;
 import java.util.List;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -13,6 +14,12 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import com.amap.api.location.AMapLocation;
+import com.amap.api.location.AMapLocationListener;
+import com.amap.api.location.LocationManagerProxy;
+import com.amap.api.location.LocationProviderProxy;
 
 public class firstpage extends FragmentActivity implements OnClickListener {
 
@@ -35,6 +42,10 @@ public class firstpage extends FragmentActivity implements OnClickListener {
 	private FragmentPagerAdapter mAdapter;
 	private List<Fragment> mFragments;
 
+	//高德地图
+	private LocationManagerProxy aMapManager;
+	private ImageButton locImageButton;
+	private TextView textView;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
@@ -43,39 +54,109 @@ public class firstpage extends FragmentActivity implements OnClickListener {
 		initView();
 		ininevents();
 		setSelect(0);
+		//采用高德地图定位
+		locImageButton=(ImageButton)findViewById(R.id.locat_imgbtn);
+		textView=(TextView)findViewById(R.id.position_text);
+		locImageButton.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				startAmap();
+			}
+		});
+
 
 	}
+	//开始定位
+	private void startAmap() {
+		aMapManager = LocationManagerProxy.getInstance(this);
+		/*
+		 * 1.0.2版本新增方法，设置true表示混合定位中包含gps定位，false表示纯网络定位，默认是true Location
+		 * API定位采用GPS和网络混合定位方式
+		 * ，第一个参数是定位provider，第二个参数时间最短是2000毫秒，第三个参数距离间隔单位是米，第四个参数是定位监听者
+		 */
+		aMapManager.requestLocationUpdates(LocationProviderProxy.AMapNetwork, 2000, 10, mAMapLocationListener);
+	}
+
+	private void stopAmap() {
+		if (aMapManager != null) {
+			aMapManager.removeUpdates(mAMapLocationListener);
+			aMapManager.destory();
+		}
+		aMapManager = null;
+	}
+	//定位监听者
+    private AMapLocationListener mAMapLocationListener = new AMapLocationListener() {
+		
+		@Override
+		public void onStatusChanged(String provider, int status, Bundle extras) {
+			
+		}
+		
+		@Override
+		public void onProviderEnabled(String provider) {
+			
+		}
+		
+		@Override
+		public void onProviderDisabled(String provider) {
+			
+		}
+		
+		@Override
+		public void onLocationChanged(Location location) {
+			
+		}
+		
+		@Override
+		public void onLocationChanged(AMapLocation location) {
+			if (location != null) {
+				String desc = "";
+				Bundle locBundle = location.getExtras();
+				if (locBundle != null) {
+					desc = locBundle.getString("desc");
+				}
+
+				textView.setText(desc);
+			}
+		}
+	};
 
 	private void setSelect(int i) {
 		// 设置图片为亮色
 
-	
 		setTab(i);
 		viewpager.setCurrentItem(i);
 	}
 
-	private void setTab(int i){
+	private void setTab(int i) {
+		View discover_STUB = findViewById(R.id.stb_viewstub);
 		switch (i) {
 		case 0:
+			discover_STUB.setVisibility(View.VISIBLE);
 			ImgFind.setImageResource(R.drawable.find);
+
 			break;
 
 		case 1:
 
+			discover_STUB.setVisibility(View.GONE);
 			ImgLost.setImageResource(R.drawable.lost);
 			break;
 		case 2:
-
+			discover_STUB.setVisibility(View.GONE);
 			ImgGet.setImageResource(R.drawable.getback);
 			break;
 		case 3:
-
+			discover_STUB.setVisibility(View.GONE);
 			ImgMine.setImageResource(R.drawable.myself);
 			break;
 		default:
 			break;
 		}
 	}
+
 	private void ininevents() {
 		// TODO Auto-generated method stub
 		mtabFind.setOnClickListener(this);
@@ -123,26 +204,26 @@ public class firstpage extends FragmentActivity implements OnClickListener {
 			}
 		};
 		viewpager.setAdapter(mAdapter);
-		
+
 		viewpager.setOnPageChangeListener(new OnPageChangeListener() {
-			
+
 			@Override
 			public void onPageSelected(int arg0) {
 				// TODO Auto-generated method stub
-				int currentItem=viewpager.getCurrentItem();
+				int currentItem = viewpager.getCurrentItem();
 				setTab(currentItem);
 			}
-			
+
 			@Override
 			public void onPageScrolled(int arg0, float arg1, int arg2) {
 				// TODO Auto-generated method stub
-				
+
 			}
-			
+
 			@Override
 			public void onPageScrollStateChanged(int arg0) {
 				// TODO Auto-generated method stub
-				
+
 			}
 		});
 	}
@@ -161,18 +242,23 @@ public class firstpage extends FragmentActivity implements OnClickListener {
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
+		View inflated, inflated1, inflated2, inflated3;
 		switch (v.getId()) {
 		case R.id.find_layout:
 			setSelect(0);
+
 			break;
 
 		case R.id.lost_layout:
 			setSelect(1);
+
 			break;
 		case R.id.getback_layout:
 			setSelect(2);
+
 			break;
 		case R.id.mine_layout:
+
 			setSelect(3);
 			break;
 		default:

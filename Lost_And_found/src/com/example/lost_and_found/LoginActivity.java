@@ -75,7 +75,7 @@ public class LoginActivity extends Activity{
 							}
 						}
 					});
-    				Intent intent=new Intent(LoginActivity.this,MainActivity.class);
+    				Intent intent=new Intent(LoginActivity.this,firstpage.class);
     				startActivity(intent);   				         
     			}else if (event == SMSSDK.EVENT_GET_VERIFICATION_CODE){
     				//获取验证码成功   				

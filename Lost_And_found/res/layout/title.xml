@@ -24,7 +24,7 @@
                 android:orientation="horizontal" >
 
                 <ImageButton
-                    android:id="@+id/imageButton1"
+                    android:id="@+id/locat_imgbtn"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="18dp"

@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 
 public class MainActivity extends Activity {
@@ -18,7 +19,8 @@ public class MainActivity extends Activity {
 			public void run() {
 				// TODO Auto-generated method stub
 				Intent intent = new Intent();
-				intent.setClass(MainActivity.this, LoginActivity.class);
+				intent.setClass(MainActivity.this, firstpage.class);
+				
 				startActivity(intent);
 				finish();
 			}

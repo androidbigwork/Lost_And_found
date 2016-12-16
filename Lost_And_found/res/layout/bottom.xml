@@ -96,7 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="#DCDCDC"
-                    android:src="@drawable/lost" />
+                    android:src="@drawable/getback" />
 
                 <TextView
                     android:id="@+id/lost_text"

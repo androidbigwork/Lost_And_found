@@ -6,7 +6,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="find">发现</string>
     <string name="lost">丢失</string>
-    <string name="foundback">找回</string>
+    <string name="foundback">招领</string>
     <string name="mine">我的</string>
     <string name="PhoneNumber">手机号码</string>
     <string name="identity_code">验证码</string>
@@ -17,5 +17,6 @@
     <string name="connection">联系方式</string>
     <string name="address">地址</string>
     <string name="sex">性别</string>
+    <string name="privateinformation">个人信息</string>
 
 </resources>
